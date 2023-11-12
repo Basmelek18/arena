@@ -19,12 +19,12 @@ class BaseCharacter:
 
     def set_things(self, *args):
         return {
-            'sum_damage': sum(args[0]) + DEFAULT_ATTACK,
-            'sum_defence': sum(args[1]) + DEFAULT_DEFENCE,
-            'sum_hp': sum(args[2]) + DEFAULT_HP
+            'sum_damage': args[0] + DEFAULT_ATTACK,
+            'sum_defence': args[1] + DEFAULT_DEFENCE,
+            'sum_hp': args[2] + DEFAULT_HP
         }
 
 
 teo = BaseCharacter('oleg').set_things(2, 20, 10)
-print(teo.attack)
+print(teo)
 
