@@ -17,14 +17,9 @@ class BaseCharacter:
     def hells(self):
         return self.set_things['sum_hp']
 
-    def set_things(self, *args):
+    def set_things(self, extra_attack, extra_def, extra_hp):
         return {
-            'sum_damage': args[0] + DEFAULT_ATTACK,
-            'sum_defence': args[1] + DEFAULT_DEFENCE,
-            'sum_hp': args[2] + DEFAULT_HP
+            'sum_damage': extra_attack + DEFAULT_ATTACK,
+            'sum_defence': extra_def + DEFAULT_DEFENCE,
+            'sum_hp': extra_hp + DEFAULT_HP
         }
-
-
-teo = BaseCharacter('oleg').set_things(2, 20, 10)
-print(teo)
-
