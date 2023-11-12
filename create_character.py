@@ -36,6 +36,3 @@ def our_characters():
     palladin_list = [Palladin(name) for name in random.sample(
         character_name_list, 10 - warrior_num)]
     return warrior_list + palladin_list
-
-
-print(our_characters())
