@@ -16,15 +16,14 @@ class BaseCharacter:
         return self.start_hp
 
     def set_things(self, extra_attack=0, extra_def=0, extra_hp=0):
-            self.start_attack = extra_attack + self.attack()
-            self.start_defence = extra_def + self.defence()
-            self.start_hp = extra_hp + self.hells()
+        self.start_attack = extra_attack + self.attack()
+        self.start_defence = extra_def + self.defence()
+        self.start_hp = extra_hp + self.hells()
 
-
-#    def taken_damage(self, attack_damage):
-#        after_armor = self.set_things()['extra_defence'] - attack_damage
-#        self.start_hp = self.set_things()['extra_hp'] + after_armor
- #       if after_armor >= 0:
- #           self.start_defence = 0
-  #      self.start_defence =
-#
+    def taken_damage(self, attack_damage):
+        after_armor = self.start_defence - attack_damage
+        if after_armor <= 0:
+            self.start_defence = 0
+            self.start_hp = self.start_hp + after_armor
+        else:
+            self.start_defence = after_armor

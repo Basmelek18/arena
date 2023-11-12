@@ -37,10 +37,3 @@ def our_characters():
         character_name_list, 10 - warrior_num)]
     return warrior_list + palladin_list
 
-
-top = Warrior('sd')
-top.set_things(12, 50, 50)
-top1 = Palladin('sd')
-top1.set_things(12, 50, 50)
-print(top.attack())
-print(top1.attack())
