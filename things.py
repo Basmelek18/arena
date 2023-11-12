@@ -14,13 +14,11 @@ class Thing:
     def defence(self):
         value_defence = randint(*self.RANGE_VALUE_DEFENCE)
         return value_defence
-    
-    def healing(self):
+
+    def health(self):
         value_healing = randint(*self.RANGE_VALUE_HEALING)
         return value_healing
 
-    # def __str__(self):
-    #     return f'{self.__class__.__name__} - {self.BRIEF_DESC_THING_CLASS}.'
 
 class MagicRing(Thing):
     BRIEF_DESC_THING_CLASS = ('магическое кольцо')
@@ -53,15 +51,3 @@ class Herbs(Thing):
     RANGE_VALUE_ATTACK = (0, 0)
     RANGE_VALUE_DEFENCE = (0, 0)
     RANGE_VALUE_HEALING = (1, 5)
-
-
-# def pack():
-#     sword_attack = Sword().attack()
-#     ring_attack = MagicRing().attack()
-#     ring_defence = MagicRing().defence()
-#     shield_defence = Shield().defence()
-#     bow_attack = Bow().attack()
-#     sum_attack = sword_attack+ring_attack+bow_attack
-#     sum_defence = ring_defence+shield_defence
-#     return  sum_attack, sum_defence
-

@@ -12,7 +12,7 @@ class BaseCharacter:
     def defence(self):
         return self.start_defence
 
-    def hells(self):
+    def health(self):
         return self.start_hp
 
     def taken_damage(self, attack_damage):
