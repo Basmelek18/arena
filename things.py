@@ -44,3 +44,15 @@ class Bow(Thing):
 class Herbs(Thing):
     BRIEF_DESC_THING_CLASS = ('магичекое зелье')
     RANGE_VALUE_HEALING = (3, 5)
+
+
+def pack():
+    sword_attack = Sword().attack()
+    ring_attack = MagicRing().attack()
+    ring_defence = MagicRing().defence()
+    shield_defence = Shield().defence()
+    bow_attack = Bow().attack()
+    sum_attack = sum(sword_attack, ring_attack, bow_attack)
+    sum_defence = sum(ring_defence, shield_defence)
+    return  sum_attack, sum_defence
+
