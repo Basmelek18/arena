@@ -1,25 +1,23 @@
-DEFAULT_ATTACK = 5
-DEFAULT_DEFENCE = 10
-DEFAULT_HP = 100
-
-
 class BaseCharacter:
 
-    def __init__(self, name):
+    def __init__(self, name, attack, defence, hp):
         self.name = name
+        self.start_attack = attack
+        self.start_defence = defence
+        self.start_hp = hp
 
     def attack(self):
-        return self.set_things['sum_damage']
+        return self.start_attack
 
     def defence(self):
-        return self.set_things['sum_defence']
+        return self.start_defence
 
     def hells(self):
-        return self.set_things['sum_hp']
+        return self.start_hp
 
     def set_things(self, extra_attack, extra_def, extra_hp):
         return {
-            'sum_damage': extra_attack + DEFAULT_ATTACK,
-            'sum_defence': extra_def + DEFAULT_DEFENCE,
-            'sum_hp': extra_hp + DEFAULT_HP
+            'extra_damage': extra_attack + self.attack(),
+            'extra_defence': extra_def + self.defence(),
+            'extra_hp': extra_hp + self.hells()
         }
