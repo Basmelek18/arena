@@ -26,19 +26,16 @@ list_names = [
     'Фрингильа Виго',
 ]
 
+warrior_num = random.randint(0, 10)
+character_name_list = random.sample(list_names, 10)
+
 
 def our_characters():
-    warrior_num = random.randint(0, 10)
-    character_name_list = random.sample(list_names, 10)
-
     warrior_list = [Warrior(name) for name in random.sample(
         character_name_list, warrior_num)]
-
     palladin_list = [Palladin(name) for name in random.sample(
         character_name_list, 10 - warrior_num)]
+    return warrior_list + palladin_list
 
-    print(warrior_list, palladin_list)
-    for character in warrior_list:
-        print(character.set_things())
-    for character in palladin_list:
-        print(character.set_things())
+
+print(our_characters())
