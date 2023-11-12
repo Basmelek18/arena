@@ -1,6 +1,6 @@
 class BaseCharacter:
 
-    def __init__(self, name, attack=0, defence=0, hp=0):
+    def __init__(self, name, attack=5, defence=0, hp=100):
         self.name = name
         self.start_attack = attack
         self.start_defence = defence
