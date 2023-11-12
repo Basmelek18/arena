@@ -14,7 +14,3 @@ class Palladin(BaseCharacter):
 
     def hells(self):
         return self.start_hp * 2
-
-
-test_w = Warrior('fedya', 2, 3, 4).set_things(10, 20, 40)
-print(test_w)
