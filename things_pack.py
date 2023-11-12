@@ -10,13 +10,10 @@ def the_things():
         Bow('bow'),
         Herbs('herb')
     ]
+    things_pack = []
     for thing in sample(things_list, randint(0, 4)):
-        return thing
-        # print(f'    {thing.name} attack', thing.attack())
-        # print(f'    {thing.name} defence', thing.defence())
-        # print(f'    {thing.name} healing', thing.healing())
-        # print(' ')
+        things = [thing.name, thing.attack(), thing.defence(), thing.healing()]
+        things_pack.append(things)
 
-    
+    return things_pack
 
-# the_things()
