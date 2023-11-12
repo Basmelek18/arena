@@ -46,13 +46,13 @@ class Herbs(Thing):
     RANGE_VALUE_HEALING = (3, 5)
 
 
-def pack():
-    sword_attack = Sword().attack()
-    ring_attack = MagicRing().attack()
-    ring_defence = MagicRing().defence()
-    shield_defence = Shield().defence()
-    bow_attack = Bow().attack()
-    sum_attack = sword_attack+ring_attack+bow_attack
-    sum_defence = ring_defence+shield_defence
-    return  sum_attack, sum_defence
+# def pack():
+#     sword_attack = Sword().attack()
+#     ring_attack = MagicRing().attack()
+#     ring_defence = MagicRing().defence()
+#     shield_defence = Shield().defence()
+#     bow_attack = Bow().attack()
+#     sum_attack = sword_attack+ring_attack+bow_attack
+#     sum_defence = ring_defence+shield_defence
+#     return  sum_attack, sum_defence
 

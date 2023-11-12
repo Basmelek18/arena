@@ -81,24 +81,22 @@ def choice_char_class(char_name: str) -> Character:
     return char_class
 
 
-def start_training(character1: Character, character2: Character) -> str:
+def start_training(character: Character) -> str:
     print('Потренируйся управлять своими навыками.')
     print('Введи одну из команд: attack — чтобы атаковать противника, '
           'defence — чтобы блокировать атаку противника или '
           'special — чтобы использовать свою суперсилу.')
     print('Если не хочешь тренироваться, введи команду skip.')
 
-    cmd1 = {'attack': character1.attack(), 'defence': character1.defence(), 'special': character1.special()}
-    cmd2 = {'attack': character2.attack(), 'defence': character2.defence(), 'special': character2.special()}
+    cmd = {'attack': character.attack(), 'defence': character.defence(), 'special': character.special()}
 
     select_action: str = None
 
     while select_action != 'skip':
         select_action = input('Введи команду: ')
-        if select_action in cmd1:
-            result1: str = cmd1[select_action]
-            result2: str = cmd2[select_action]
-            print(result1- result2)
+        if select_action in cmd:
+            result: str = cmd[select_action]
+            print(result)
     return 'Тренировка окончена.'
 
 
