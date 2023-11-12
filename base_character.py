@@ -1,6 +1,6 @@
 class BaseCharacter:
 
-    def __init__(self, name, attack=5, defence=10, hp=100):
+    def __init__(self, name, attack=0, defence=0, hp=0):
         self.name = name
         self.start_attack = attack
         self.start_defence = defence
@@ -14,11 +14,6 @@ class BaseCharacter:
 
     def hells(self):
         return self.start_hp
-
-    def set_things(self, extra_attack=0, extra_def=0, extra_hp=0):
-        self.start_attack = extra_attack + self.attack()
-        self.start_defence = extra_def + self.defence()
-        self.start_hp = extra_hp + self.hells()
 
     def taken_damage(self, attack_damage):
         after_armor = self.start_defence - attack_damage

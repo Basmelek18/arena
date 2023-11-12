@@ -1,19 +1,19 @@
 from random import sample, randint
 
-from things import MagicRing, Sword, Shield, Bow, Herbs
+from things import *
 
-def the_things():
-    things_list = [
+THINGS_LIST = [
         MagicRing('ring'),
         Sword('sword'),
         Shield('shield'),
         Bow('bow'),
         Herbs('herb')
     ]
-    things_pack = []
-    for thing in sample(things_list, randint(0, 4)):
-        things = [thing.name, thing.attack(), thing.defence(), thing.healing()]
-        things_pack.append(things)
+RANGE_THINGS = sample(THINGS_LIST, randint(0, 4))
 
+def the_things(range_things=RANGE_THINGS):
+    things_pack = {}
+    for thing in range_things:
+        things = {thing.name: [thing.attack(), thing.defence(), thing.healing()]}
+        things_pack.update(things)
     return things_pack
-
