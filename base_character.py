@@ -1,13 +1,17 @@
+from random import randint
+
+
 class BaseCharacter:
 
-    def __init__(self, name, attack=5, defence=0, hp=100):
+    def __init__(self, name, attack=30, defence=0, hp=100, nishtyaki=''):
         self.name = name
         self.start_attack = attack
         self.start_defence = defence
         self.start_hp = hp
 
     def attack(self):
-        return self.start_attack
+        start_attack = randint(1, self.start_attack)
+        return start_attack
 
     def defence(self):
         return self.start_defence
@@ -22,3 +26,4 @@ class BaseCharacter:
             self.start_hp = self.start_hp + after_armor
         else:
             self.start_defence = after_armor
+        return after_armor

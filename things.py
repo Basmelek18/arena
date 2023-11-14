@@ -4,20 +4,23 @@ from random import randint
 class Thing:
     BRIEF_DESC_THING_CLASS = 'thing'
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, num, attack=0, defence=0, hp=0):
+        self.name = "_".join([self.BRIEF_DESC_THING_CLASS, str(num)])
+        self.start_attack = attack
+        self.start_defence = defence
+        self.start_hp = hp
 
     def attack(self):
-        value_attack = randint(*self.RANGE_VALUE_ATTACK)
-        return value_attack
+        attack = randint(*self.RANGE_VALUE_ATTACK)
+        return attack
 
     def defence(self):
-        value_defence = randint(*self.RANGE_VALUE_DEFENCE)
-        return value_defence
+        defence = randint(*self.RANGE_VALUE_DEFENCE)
+        return defence
 
     def health(self):
-        value_healing = randint(*self.RANGE_VALUE_HEALING)
-        return value_healing
+        hp = randint(*self.RANGE_VALUE_HEALING)
+        return hp
 
 
 class MagicRing(Thing):
@@ -47,7 +50,7 @@ class Bow(Thing):
     RANGE_VALUE_HEALING = (0, 0)
 
 class Herbs(Thing):
-    BRIEF_DESC_THING_CLASS = ('магичекое зелье')
+    BRIEF_DESC_THING_CLASS = ('магическое зелье')
     RANGE_VALUE_ATTACK = (0, 0)
     RANGE_VALUE_DEFENCE = (0, 0)
     RANGE_VALUE_HEALING = (1, 5)
