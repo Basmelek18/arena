@@ -3,21 +3,21 @@ from random import sample, randint
 from things import *
 
 
-THINGS_LIST = []
+NUMBER_OF_VARIETY_OF_ITEMS = 20
 
-def all_things():
-    for num in range(1, 10):
-        THINGS_LIST.append(MagicRing(num))
-        THINGS_LIST.append(Sword(num))
-        THINGS_LIST.append(Shield(num))
-        THINGS_LIST.append(Bow(num))
-        THINGS_LIST.append(Herbs(num))
-    all_things = sample(THINGS_LIST, randint(0, 4))
-    return all_things
+def create_things():
+    things_list = []
+    for num in range(NUMBER_OF_VARIETY_OF_ITEMS):
+        things_list.append(MagicRing(num))
+        things_list.append(Sword(num))
+        things_list.append(Shield(num))
+        things_list.append(Bow(num))
+        things_list.append(Herbs(num))
+    return things_list
 
 
-def one_pack(range_things=all_things()):
-    range_things = sample(THINGS_LIST, randint(0, 4))
+def one_pack(number_of_items_in_pack=4):
+    range_things = sample(create_things(), randint(0, number_of_items_in_pack))
     one_pack = {}
     for thing in range_things:
         things = {thing.name: [thing.attack(), thing.defence(), thing.health()]}

@@ -3,14 +3,14 @@ from random import randint
 
 class BaseCharacter:
 
-    def __init__(self, name, attack=30, defence=0, hp=100, nishtyaki=''):
+    def __init__(self, name, attack=100, defence=0, hp=100, nishtyaki=''):
         self.name = name
         self.start_attack = attack
         self.start_defence = defence
         self.start_hp = hp
 
     def attack(self):
-        start_attack = randint(1, self.start_attack)
+        start_attack = randint(30, self.start_attack)
         return start_attack
 
     def defence(self):
